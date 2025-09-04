@@ -1,7 +1,7 @@
 # Sorting Algorithms Analysis
 
-Student Name: [Your Name]
-Date: [Date]
+Student Name: [Dario Garay Rojo]
+Date: [9/3/2025]
 
 ## Time Complexity Analysis
 
