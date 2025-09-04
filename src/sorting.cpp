@@ -49,11 +49,11 @@ void insertionSort(int arr[], int n) {
 }
 }
 
-void merge(int arr[], int l, int m, int r) {
-    int p1 = l;
-    int p2 = m+1;
+void merge(int arr[], int left, int middle, int right) {
+    int p1 = left;
+    int p2 = middle+1;
     std::vector<int> temp;
-    while (p1 <= m && p2 <= r){
+    while (p1 <= middle && p2 <= right){
         if (arr[p1] <= arr[p2]){
             temp.push_back(arr[p1]);
             p1++;
@@ -63,25 +63,25 @@ void merge(int arr[], int l, int m, int r) {
         }
     }
     // restantes
-    while (p1 <= m){
+    while (p1 <= middle){
         temp.push_back(arr[p1]);
         p1++;
     }
-    while (p2 <= r){
+    while (p2 <= right){
         temp.push_back(arr[p2]);
         p2++;
     }
     for (int indice=0; indice < (int)temp.size(); indice++){
-        arr[l + indice] = temp[indice];
+        arr[left + indice] = temp[indice];
     }
 }
 
-void mergeSort(int arr[], int l, int r) {
-    if (l < r) {
-        int m = (l + r) / 2;
-        mergeSort(arr, l, m);      // Ordenar primera mitad
-        mergeSort(arr, m + 1, r);  // Ordenar segunda mitad
-        merge(arr, l, m, r);       // Fusionar ambas mitades
+void mergeSort(int arr[], int left, int right) {
+    if (left < right) {
+        int m = (left + right) / 2;
+        mergeSort(arr, left, m);      // Ordenar primera mitad
+        mergeSort(arr, m + 1, right);  // Ordenar segunda mitad
+        merge(arr, left, m, right);       // Fusionar ambas mitades
     }   
 }
 
